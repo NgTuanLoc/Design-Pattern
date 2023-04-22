@@ -6,6 +6,7 @@ class Program
   static void Main(string[] args)
   {
     Console.Clear();
+    // ========== Singleton Patterns ==========
     Singleton instance = Singleton.Instance;
     instance.SayHello();
     instance.SayHello();
@@ -22,5 +23,24 @@ class Program
     VehicleFactory motorcycleFactory = new MotorcycleFactory();
     IVehicle motorcycle = motorcycleFactory.CreateVehicle();
     motorcycle.Drive();
+
+    // ========== Abstract Factory Patterns ==========
+    IGUIFactory factory;
+    IButton button;
+    ICheckbox checkbox;
+
+    // Create a Windows GUI
+    factory = new WindowsGUIFactory();
+    button = factory.CreateButton();
+    checkbox = factory.CreateCheckbox();
+    button.Paint();
+    checkbox.Paint();
+
+    // Create a Mac GUI
+    factory = new MacGUIFactory();
+    button = factory.CreateButton();
+    checkbox = factory.CreateCheckbox();
+    button.Paint();
+    checkbox.Paint();
   }
 }
