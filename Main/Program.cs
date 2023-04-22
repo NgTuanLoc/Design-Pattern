@@ -6,7 +6,10 @@ class Program
   static void Main(string[] args)
   {
     Console.Clear();
-    Singleton.Log();
-    Console.WriteLine("HI");
+    Singleton instance = Singleton.Instance;
+    instance.SayHello();
+    instance.SayHello();
+    instance.SayHello();
+    instance.SayHello();
   }
 }
