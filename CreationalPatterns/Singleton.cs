@@ -5,7 +5,7 @@ namespace CreationalPatterns
   {
     private static readonly Singleton instance = new Singleton();
     private int callCount = 0;
-    public Singleton()
+    private Singleton()
     {
     }
     public static Singleton Instance
