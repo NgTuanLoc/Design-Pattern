@@ -6,7 +6,11 @@ class Program
   static void Main(string[] args)
   {
     Console.Clear();
-    Singleton.Log();
+    Singleton instance = Singleton.Instance;
+    instance.SayHello();
+    instance.SayHello();
+    instance.SayHello();
+    instance.SayHello();
 
     // ========== Factory Patterns ==========
     // Create an instance of CarFactory and drive a car

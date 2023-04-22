@@ -1,15 +1,28 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+// Singleton Pattern: This pattern ensures that only one instance of a class is created and provides a global point of access to that instance.
 namespace CreationalPatterns
 {
   public class Singleton
   {
-    public static void Log()
+    private static readonly Singleton instance = new Singleton();
+    private int callCount = 0;
+    private Singleton()
     {
-      Console.WriteLine("HELOOO");
+    }
+    public static Singleton Instance
+    {
+      get
+      {
+        return instance;
+      }
+    }
+    public void SayHello()
+    {
+      Console.WriteLine($"Hello {callCount}");
+      callCount++;
+    }
+    public int getCount()
+    {
+      return callCount;
     }
   }
 }
